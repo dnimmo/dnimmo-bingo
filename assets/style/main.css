@@ -51,15 +51,26 @@ table {
 
 /* Application styles */
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: rgba(0,188,173,1)
+  background-color: rgba(0,188,173,1);
+  transform: translate3d(0,0,0);
 }
 
 .card-container {
+  animation: fadeIn 2s;
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 3px 3px 5px #666;
@@ -72,11 +83,16 @@ body {
   width: 85%;
 }
 
-.number-row {
+.card div {
   display: flex;
 }
 
-.number-row span {
+.column {
+  float: left;
+  width: 10%;
+}
+
+.card span {
   border: 1px solid #e0e0e0;
   flex: 1 1 auto;
   min-height: 10vw;
@@ -90,4 +106,10 @@ body {
   float: right;
   min-height: 25vw;
   min-width: 13%;
+}
+
+span.marked {
+  background-color: #00ff00;
+  color: #fff;
+  font-weight: bold;
 }

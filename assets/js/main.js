@@ -12,6 +12,9 @@ var viewCards = viewFactory.findCards()
 // Populate cards
 for (var i = 0; i < cards.length; i+=1) {
   viewFactory.populateRows(cards[i], viewCards[i]) 
+  viewFactory.checkRemainingNumberCount(viewCards[i])
 }
 // Start game
 
+// Update counts per turn
+// viewFactory.checkRemainingNumberCount()

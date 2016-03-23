@@ -22,16 +22,16 @@ function viewFactory(cards, numbers) {
         unavailableSpaces.push(i)
       }
     }
-    console.log(unavailableSpaces)
     var diceRoll = rollDice()
     while(unavailableSpaces.indexOf(diceRoll) !== -1) {
+      // Keep trying until we get a space that is empty
       diceRoll = rollDice()
     }
     columnArray[diceRoll].innerHTML = number;
   }
   return {
     findCards : function() {
-      return document.querySelectorAll('.card')
+      return document.querySelectorAll('.card-container')
     },
     populateRows : function (modelCard, viewCard) {
       modelCard.forEach(function(number) {
@@ -65,6 +65,10 @@ function viewFactory(cards, numbers) {
             break
         }
       })
+    }, 
+    checkRemainingNumberCount : function (viewCard) {
+      viewCard.querySelector('.remaining-count').innerHTML = 15 - viewCard.querySelectorAll('.marked').length
+      return this
     }
   }
 }

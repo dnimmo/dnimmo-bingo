@@ -66,6 +66,7 @@ table {
 
 body {
   background-color: rgba(0,188,173,1);
+  font-family: 'arial';
   transform: translate3d(0,0,0);
 }
 
@@ -74,13 +75,8 @@ body {
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 3px 3px 5px #666;
-  margin: 5%;
+  margin: 5% 0;
   padding: 1%;
-}
-
-.card {
-  display: inline-block;
-  width: 85%;
 }
 
 .card div {
@@ -94,8 +90,10 @@ body {
 
 .card span {
   border: 1px solid #e0e0e0;
-  flex: 1 1 auto;
+  flex: 1;
   min-height: 10vw;
+  padding-top: 3%;
+  text-align: center;
 }
 
 .remaining-numbers {
@@ -103,13 +101,28 @@ body {
   border-radius: 2px;
   border: 1px solid;
   color: #fff;
-  float: right;
-  min-height: 25vw;
-  min-width: 13%;
+  font-weight: bold;
+  font-size: 18px;
+  min-height: 15vw;
+  padding: 5%;
+  text-align: center;
 }
 
 span.marked {
   background-color: #00ff00;
   color: #fff;
   font-weight: bold;
+}
+
+@media (min-width: 800px) {
+  .card-container {
+    float: left;
+    margin: 2.5%;
+    width: 45%;
+  }
+  
+  .card span {
+    font-size: 30px;
+    padding-top: 10%;
+  }
 }

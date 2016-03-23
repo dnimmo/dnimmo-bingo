@@ -60,6 +60,18 @@ table {
   }
 }
 
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -68,6 +80,19 @@ body {
   background-color: rgba(0,188,173,1);
   font-family: 'arial';
   transform: translate3d(0,0,0);
+}
+
+h1 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 5%;
+  text-align: center;
+  text-shadow: 2px 2px 2px #999;
+}
+
+.bingo-caller {
+  text-align: center;
 }
 
 .card-container {
@@ -94,6 +119,7 @@ body {
   min-height: 10vw;
   padding-top: 3%;
   text-align: center;
+  transition: all linear 1s;
 }
 
 .remaining-numbers {
@@ -110,8 +136,13 @@ body {
 
 span.marked {
   background-color: #00ff00;
-  color: #fff;
+  border-radius: 50px;
   font-weight: bold;
+  opacity: 0.5;
+}
+
+.winner {
+  animation: flash 1s infinite;
 }
 
 @media (min-width: 800px) {
@@ -122,7 +153,7 @@ span.marked {
   }
   
   .card span {
-    font-size: 30px;
-    padding-top: 10%;
+    min-height: 0;
+    padding: 5% 0;
   }
 }

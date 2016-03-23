@@ -3,6 +3,7 @@ var bingoNumbers = '011722475204365360702637497481233455758302154058881928446789
 
 var cardFactory = cardFactory(bingoNumbers)
 var viewFactory = viewFactory()
+var bingoCaller = bingoCaller(90) // bingoCaller takes the highest number available in the game, to allow us to have variations with different numbers, to account for local variations in Bingo rules
 
 // Setup
 var numbers = cardFactory.prepareNumbers()
@@ -14,7 +15,27 @@ for (var i = 0; i < cards.length; i+=1) {
   viewFactory.populateRows(cards[i], viewCards[i]) 
   viewFactory.checkRemainingNumberCount(viewCards[i])
 }
-// Start game
 
-// Update counts per turn
-// viewFactory.checkRemainingNumberCount()
+// Start game
+function gameRound() {
+  var isGameOver = false
+  var numberCalled = bingoCaller.callNumber()
+  viewFactory.updateDisplayNumber(numberCalled)
+
+  // Update counts per turn
+  for (var i = 0; i < cards.length; i+=1) {
+    if (viewFactory.checkNumberCalled(viewCards[i], numberCalled)) {
+      // checkRemainingNumberCount will return true if the game is over
+      isGameOver = viewFactory.checkRemainingNumberCount(viewCards[i], true)
+      if(isGameOver) {
+        viewCards[i].classList.add('winner')
+      }
+      break;
+    }
+  }
+  if(isGameOver) {
+    clearInterval(interval)
+  }
+}
+gameRound()
+var interval = setInterval(gameRound, 2000)

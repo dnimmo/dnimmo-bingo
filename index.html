@@ -11,6 +11,10 @@
   </head>
   <body>
     <main>
+      <h1>Nimmo Bingo</h1>
+      <div class='bingo-caller'>
+        <p>The last number called was: <span id='last-number'><!--Injected by JS--></span>
+      </div>
       <ol>
         <li class='card-container'>
           <div class='card 0'>
@@ -25,7 +29,7 @@
               <span class='column-1'>&nbsp;</span><span class='column-2'>&nbsp;</span><span class='column-3'>&nbsp;</span><span class='column-4'>&nbsp;</span><span class='column-5'>&nbsp;</span><span class='column-6'>&nbsp;</span><span class='column-7'>&nbsp;</span><span class='column-8'>&nbsp;</span><span class='column-9'>&nbsp;</span>
             </div>
           </div>
-          <div class='remaining-numbers'><span class='remaining-count'><!--Injected through JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
+          <div class='remaining-numbers'><span class='remaining-count'><!--Injected by JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
         </li>
         <li class='card-container'>
           <div class='card 1'>
@@ -40,7 +44,7 @@
               <span class='column-1'>&nbsp;</span><span class='column-2'>&nbsp;</span><span class='column-3'>&nbsp;</span><span class='column-4'>&nbsp;</span><span class='column-5'>&nbsp;</span><span class='column-6'>&nbsp;</span><span class='column-7'>&nbsp;</span><span class='column-8'>&nbsp;</span><span class='column-9'>&nbsp;</span>
             </div>
           </div>
-          <div class='remaining-numbers'><span class='remaining-count'><!--Injected through JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
+          <div class='remaining-numbers'><span class='remaining-count'><!--Injected by JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
         </li>
         <li class='card-container'>
           <div class='card 2'>
@@ -55,7 +59,7 @@
               <span class='column-1'>&nbsp;</span><span class='column-2'>&nbsp;</span><span class='column-3'>&nbsp;</span><span class='column-4'>&nbsp;</span><span class='column-5'>&nbsp;</span><span class='column-6'>&nbsp;</span><span class='column-7'>&nbsp;</span><span class='column-8'>&nbsp;</span><span class='column-9'>&nbsp;</span>
             </div>
           </div>
-          <div class='remaining-numbers'><span class='remaining-count'><!--Injected through JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
+          <div class='remaining-numbers'><span class='remaining-count'><!--Injected by JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
         </li>
         <li class='card-container'>
           <div class='card 3'>
@@ -70,7 +74,7 @@
               <span class='column-1'>&nbsp;</span><span class='column-2'>&nbsp;</span><span class='column-3'>&nbsp;</span><span class='column-4'>&nbsp;</span><span class='column-5'>&nbsp;</span><span class='column-6'>&nbsp;</span><span class='column-7'>&nbsp;</span><span class='column-8'>&nbsp;</span><span class='column-9'>&nbsp;</span>
             </div>
           </div>
-          <div class='remaining-numbers'><span class='remaining-count'><!--Injected through JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
+          <div class='remaining-numbers'><span class='remaining-count'><!--Injected by JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
         </li>
         <li class='card-container'>
           <div class='card 4'>
@@ -85,7 +89,7 @@
               <span class='column-1'>&nbsp;</span><span class='column-2'>&nbsp;</span><span class='column-3'>&nbsp;</span><span class='column-4'>&nbsp;</span><span class='column-5'>&nbsp;</span><span class='column-6'>&nbsp;</span><span class='column-7'>&nbsp;</span><span class='column-8'>&nbsp;</span><span class='column-9'>&nbsp;</span>
             </div>
           </div>
-          <div class='remaining-numbers'><span class='remaining-count'><!--Injected through JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
+          <div class='remaining-numbers'><span class='remaining-count'><!--Injected by JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
         </li>
         <li class='card-container'>
           <div class='card 5'>
@@ -100,11 +104,12 @@
               <span class='column-1'>&nbsp;</span><span class='column-2'>&nbsp;</span><span class='column-3'>&nbsp;</span><span class='column-4'>&nbsp;</span><span class='column-5'>&nbsp;</span><span class='column-6'>&nbsp;</span><span class='column-7'>&nbsp;</span><span class='column-8'>&nbsp;</span><span class='column-9'>&nbsp;</span>
             </div>
           </div>
-          <div class='remaining-numbers'><span class='remaining-count'><!--Injected through JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
+          <div class='remaining-numbers'><span class='remaining-count'><!--Injected by JS: See assets/js/viewFactory's 'checkRemainingNumberCount' method--></span> to go!</div>
         </li>
         <!-- The above times the number of cards in the game; @TODO: Make this programmatic to allow for a dynamic number of cards --> 
       </ol>
     </main>
+    <script src='assets/js/bingoCaller.js'></script>
     <script src='assets/js/cardFactory.js'></script>
     <script src='assets/js/viewFactory.js'></script>
     <script src='assets/js/main.js'></script>

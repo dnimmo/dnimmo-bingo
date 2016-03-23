@@ -1,3 +1,5 @@
+// This is the controller that manages updates to the view
+
 function viewFactory(cards, numbers) {
   
   function rollDice() {
@@ -27,7 +29,7 @@ function viewFactory(cards, numbers) {
       // Keep trying until we get a space that is empty
       diceRoll = rollDice()
     }
-    columnArray[diceRoll].innerHTML = number;
+    columnArray[diceRoll].innerHTML = number
   }
   return {
     findCards : function() {
@@ -66,9 +68,32 @@ function viewFactory(cards, numbers) {
         }
       })
     }, 
-    checkRemainingNumberCount : function (viewCard) {
-      viewCard.querySelector('.remaining-count').innerHTML = 15 - viewCard.querySelectorAll('.marked').length
-      return this
+    checkRemainingNumberCount : function (viewCard, decrease) {
+      if(decrease) {
+        var previousTotal = viewCard.querySelector('.remaining-count').innerHTML
+        var newTotal = previousTotal -=1
+        viewCard.querySelector('.remaining-count').innerHTML = newTotal
+        if(newTotal === 0) {
+          return true  
+        }
+      } else {
+      viewCard.querySelector('.remaining-count').innerHTML = 15
+      }
+    },
+    updateDisplayNumber : function (number) {
+      document.querySelector('#last-number').innerHTML = number
+    },
+    checkNumberCalled : function (viewCard, number) {
+      var spaces = viewCard.querySelectorAll('.card span')
+      var length = spaces.length
+      for (var i = 0; i < length; i+=1) {
+        if(parseInt(spaces[i].innerHTML) === number) {
+          // Mark this number as having been called
+          spaces[i].classList.add('marked')
+          return true
+        }
+      }
+      return false
     }
   }
 }

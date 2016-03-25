@@ -15,7 +15,7 @@ function viewFactory(cards, numbers) {
     // Convert this into an array to make it easier to work with
     var columnArray = Array.prototype.slice.call(columnNodeList)
     
-    // If a space has already been fille, we need to ensure that we don't try and re-populate it
+    // If a space has already been filled, we need to ensure that we don't try and re-populate it
     var unavailableSpaces = []
     
     // Loop through the column array and record any spaces already filled
